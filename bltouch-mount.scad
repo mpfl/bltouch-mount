@@ -1,6 +1,5 @@
 mount_z_offset = 5;
-mount_length = 60;
-
+mount_length = 63;
 
 bltouch_head_rect_width = 11.5;
 bltouch_head_rect_length = 6;
@@ -30,9 +29,9 @@ module print_parts() {
 module print_strain_relief() {
     translate([-2, (bltouch_hole_pitch + bltouch_hole_diameter + 2 * bltouch_hole_edge) / 2 - bltouch_head_rect_length / 2 , 0])
         difference() {
-            cube([2, bltouch_head_rect_length, zip_tie_width + 2]);
+            cube([2, bltouch_head_rect_length, zip_tie_width * 1.2 + 2]);
             translate([1 , 0 - bltouch_head_rect_length / 2 , 1])
-                cube([1, bltouch_head_rect_length * 2, zip_tie_width]);
+                cube([1, bltouch_head_rect_length * 2, zip_tie_width * 1.2]);
         }
 }
 
